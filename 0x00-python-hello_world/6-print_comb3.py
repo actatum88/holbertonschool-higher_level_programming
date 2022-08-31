@@ -5,4 +5,3 @@ for x in range(9):
             print("{}{}".format(x, y), end="\n")
         else:
             print("{}{}".format(x, y), end=", ")
-            
