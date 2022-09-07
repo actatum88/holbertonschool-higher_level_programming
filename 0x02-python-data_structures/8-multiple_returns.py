@@ -1,6 +1,16 @@
 #!/usr/bin/python3
 def multiple_returns(sentence):
     if len(sentence) == 0:
-        return 0, none
+        length = 0
     else:
-        return len(sentence), sentence[0]
+        length = len(sentence)
+#    print(length)
+
+    if len(sentence) == 0:
+        first = None
+    else:
+        first = sentence[0]
+#    print(first)
+
+    ret_pair = length, first
+    return ret_pair
