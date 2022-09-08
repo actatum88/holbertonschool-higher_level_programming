@@ -1,5 +1,10 @@
 #!/usr/bin/python3
 """
-Module 0-square
-Defines class Square
+Defines a square by private instance attribute: size.
 """
+
+class Square:
+    """This class defines a square"""
+    def __init__(self, size=None):
+        """This initializes a square with a size"""
+        self.__size = size
