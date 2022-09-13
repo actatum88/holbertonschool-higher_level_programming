@@ -1,0 +1,47 @@
+Import function
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Test for correct usage
+    >>> say_my_name("Kelly", "Rowland")
+    My name is John Smith
+
+Test for only first name entry
+    >>> say_my_name("Beyonce")
+    My name is Beyonce 
+
+ Test for space and name entry   
+    >>> say_my_name('', 'Michelle')
+    My name is  Michelle
+
+    >>> say_my_name('', '')
+    My name is
+
+Test for non-string passed for first name
+    >>> say_my_name(918, "AreaCode")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+Test for non-string passed for last name
+    >>> say_my_name("918", AreaCode)
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
+
+Test for nothing passed
+    >>> say_my_name()
+    Traceback (most recent call last):
+        ...
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+Test for first_name not defined
+    >>> say_my_name(a, White)
+    Traceback (most recent call last):
+        ...
+    NameError: name 'a' is not defined
+
+Test for last_name not defined
+    >>> say_my_name("Hello", b)
+    Traceback (most recent call last):
+        ...
+    NameError: name 'b' is not defined
