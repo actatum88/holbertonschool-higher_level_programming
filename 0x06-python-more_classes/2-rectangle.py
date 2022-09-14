@@ -5,11 +5,7 @@
 class Rectangle:
     """ Class that defines a rectangle """
     def __init__(self, width=0, height=0):
-        """ Initializes a new rectangle.
-        Arguments:
-                  width (int): width of new rectangle
-                  height (int): height of new rectangle
-        """
+        """ Initializes a new rectangle."""
         self.__width = width
         self.__height = height
 
@@ -47,7 +43,7 @@ class Rectangle:
             return 0
         return (self.__height + self.__width) * 2
 
-        def __str__(self):
+    def __str__(self):
         if self.perimeter() == 0:
             return ""
         row = '#' * self.__width
