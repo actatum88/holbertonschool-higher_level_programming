@@ -3,10 +3,10 @@
 
 
 class MyList(list):
-    """ Class that extends the list and sorts """
-    def __init__(self):
-        super().__init__()
+    """Class that inherits from list
+    """
 
     def print_sorted(self):
-        """ Prints a sorted list in ascending order """
+        """ Function to print the list, but sorted in ascending
+        """
         print(sorted(self))
