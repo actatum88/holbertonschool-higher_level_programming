@@ -12,19 +12,12 @@ Tests:
     >>> my_list.append(4)
     >>> my_list.append(3)
     >>> my_list
-    [1, 2, 3]
+    [1, 4, 2, 3, 5]
     >>> my_list.print_sorted()
     [2, 3, 4]
-    >>> my_list = MyList([4, 5, 2])
-    >>> my_list
-    [4, 5, 2]
-    >>> my_list.print_sorted()
-    [2, 3, 6]
-    >>> my_list = MyList("stuff")
+     >>> my_list = MyList("jello")
     >>> my_list
     ['j', 'e', 'l', 'l', 'o']
     >>> my_list.print_sorted()
     ['o', 'l', 'l', 'e', 'j']
-    >>> new_x = MyList()
-    >>> new_x.print_sorted()
-    []
+    
