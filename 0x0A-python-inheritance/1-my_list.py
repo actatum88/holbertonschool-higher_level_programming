@@ -1,12 +1,17 @@
 #!/usr/bin/python3
-""" Task 1 my list module """
+""" Class MyList that inherits from list
+"""
 
 
 class MyList(list):
-    """Class that inherits from list
+    """ Inherit from list
     """
+    def __init__(self):
+        """ Initializes MyList 
+        """
+        super().__init__()
 
     def print_sorted(self):
-        """ Function to print the list, but sorted in ascending
+        """ Prints the list sorted(ascending)
         """
         print(sorted(self))
