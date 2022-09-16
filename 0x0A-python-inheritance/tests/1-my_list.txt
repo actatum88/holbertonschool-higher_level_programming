@@ -89,13 +89,3 @@ Testing with negative integers
     >>> my_list.print_sorted()
     [-5, 1, 2, 5]
     
-    Testing with letters
-    >>> my_list = MyList()
-    >>> my_list.append(c)
-    >>> my_list.append(o)
-    >>> my_list.append(o)
-    >>> my_list.append(l)
-    >>> print(my_list)
-    [c, o, o, l]
-    >>> my_list.print_sorted()
-    [c, l, o, o]
