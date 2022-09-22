@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-"""module creating base class"""
+"""Module creating base class"""
 
 
 class Base:
     """Base class of all other classes in this project"""
-__nb_objects = 0
+    __nb_objects = 0
 
-def __init__(self, id=None):
+    def __init__(self, id=None):
         """Initialize the class"""
         if id is not None:
             self.id = id
