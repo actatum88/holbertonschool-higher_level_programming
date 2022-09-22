@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Rectangular model"""
-from re import X
-from turtle import width
+
 from models.base import Base
 
 
