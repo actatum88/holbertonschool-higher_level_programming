@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Rectangular model"""
+""" Module Rectangle """
+
 
 from models.base import Base
 
