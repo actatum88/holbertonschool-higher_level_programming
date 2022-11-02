@@ -1,5 +1,4 @@
 #!/bin/bash/python3
-
 """catches errors from requests"""
 import urllib.request
 from urllib.error import HTTPError
