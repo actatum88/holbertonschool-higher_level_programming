@@ -1,24 +1,37 @@
 #!/usr/bin/python3
-"""Lists all states from the database hbtn_0e_0_usa"""
+"""
+Script that prints the State object with the name passed
+as argument from the database hbtn_0e_6_usa
+"""
+
 import sys
-import MySQLdb
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from model_state import Base, State
 
-if __name__ == "__main__":
-    # Connect to MySQL server
-    db = MySQLdb.connect(host="localhost", port=3306, user=sys.argv[1],
-                         passwd=sys.argv[2], db=sys.argv[3])
+if __name__ == '__main__':
+    # Get the arguments
+    mysql_user = sys.argv[1]
+    mysql_password = sys.argv[2]
+    db_name = sys.argv[3]
+    state_name = sys.argv[4]
 
-    # Create cursor to execute SQL queries
-    cursor = db.cursor()
+    # Start engine
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.
+                           format(mysql_user, mysql_password, db_name),
+                           pool_pre_ping=True)
 
-    # Execute SQL query to select all states
-    cursor.execute("SELECT * FROM states ORDER BY id ASC")
+    # Create session
+    Session = sessionmaker(bind=engine)
+    session = Session()
 
-    # Fetch all rows and print results
-    rows = cursor.fetchall()
-    for row in rows:
-        print(row)
+    # Query State object with the name passed as argument
+    state = session.query(State).filter(State.name == state_name).first()
 
-    # Close cursor and database connections
-    cursor.close()
-    db.close()
+    if state:
+        print(state.id)
+    else:
+        print("Not found")
+
+    # Close the session
+    session.close()
