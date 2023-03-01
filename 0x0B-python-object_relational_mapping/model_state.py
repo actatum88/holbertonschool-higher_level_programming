@@ -1,9 +1,9 @@
 #!/usr/bin/python3
+"""Base Model"""
 
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
-"""Base Model"""
 
 Base = declarative_base()
 
