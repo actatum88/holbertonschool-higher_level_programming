@@ -29,4 +29,8 @@ if __name__ == '__main__':
         order_by(State.id).all()
 
     # Print the results
-    for state in 
+    for state in states:
+        print("{}: {}".format(state.id, state.name))
+        
+    # Close the session
+    session.close()
