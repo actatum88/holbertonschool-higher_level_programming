@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Displays all states from the database hbtn_0e_0_usa where name matches the argument"""
+"""Displays all states from the database hbtn_0e_0_usa
+where name matches the argument"""
 import sys
 import MySQLdb
 
@@ -13,7 +14,8 @@ if __name__ == "__main__":
 
     # Define the SQL query to select all states where name matches the argument
     state_name = sys.argv[4]
-    query = "SELECT * FROM states WHERE name='{}' ORDER BY id ASC".format(state_name)
+    query =
+    "SELECT * FROM states WHERE name='{}'ORDER BY id ASC".format(state_name)
 
     # Execute the SQL query
     cursor.execute(query)
