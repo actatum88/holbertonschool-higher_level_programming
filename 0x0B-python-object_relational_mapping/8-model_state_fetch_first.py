@@ -1,24 +1,29 @@
 #!/usr/bin/python3
-"""Lists all states from the database hbtn_0e_0_usa"""
+"""
+Script that prints the first State object from the database hbtn_0e_6_usa
+"""
 import sys
-import MySQLdb
+from model_state import Base, State
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy import create_engine
 
-if __name__ == "__main__":
-    # Connect to MySQL server
-    db = MySQLdb.connect(host="localhost", port=3306, user=sys.argv[1],
-                         passwd=sys.argv[2], db=sys.argv[3])
 
-    # Create cursor to execute SQL queries
-    cursor = db.cursor()
+if __name__ == '__main__':
+    # create the connection to the database
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.
+                           format(sys.argv[1], sys.argv[2], sys.argv[3]),
+                           pool_pre_ping=True)
 
-    # Execute SQL query to select all states
-    cursor.execute("SELECT * FROM states ORDER BY id ASC")
+    # create a configured "Session" class
+    Session = sessionmaker(bind=engine)
 
-    # Fetch all rows and print results
-    rows = cursor.fetchall()
-    for row in rows:
-        print(row)
+    # create a Session instance
+    session = Session()
 
-    # Close cursor and database connections
-    cursor.close()
-    db.close()
+     # query to get the first State object from the database
+    first_state = session.query(State).order_by(State.id).first()
+
+    if first_state is None:
+        print("Nothing")
+    else:
+        print("{}: {}".format(first_state.id, first_state.name))
